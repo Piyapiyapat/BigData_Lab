@@ -1,0 +1,35 @@
+<html lang="en">
+    <link rel="stylesheet" href="/styles.css" />
+    <body>
+        <div >
+            <h2>All Users</h2>
+            <% if (user.length > 0) { %>
+            <table>
+                <thead>
+                    <tr>
+                      <th>_id</th>
+                      <th>email</th>
+                      <th>firstname</th>
+                      <th>lastname</th>
+                      <th>phone</th>
+                    </tr>
+                  </thead>
+                <tbody>
+              <% user.forEach(user => { %>  
+                <tr>
+                    <td><a href="/user/<%= user._id %>"> <%= user._id %></a> </td>
+                    <td><%= user.email %> </td>
+                    <td><%= user.firstName %> </td>
+                    <td><%= user.lastName %></td>
+                    <td><%= user.phone %></td>
+                   
+              <% }) %>
+                </tr>
+            </tbody>
+            </table>
+            <% } else { %>
+              <p>There are no user to display...</p>
+            <% } %>
+          </div>
+    </body>
+</html>

@@ -1,0 +1,21 @@
+<html lang="en">
+    <body>
+        
+        <ul>
+            <li><a href="/">Home</a> </li>
+        </ul>
+            <div>
+                <form id="update" action="/user/update/<%=user._id%>" method="post">
+                    <label>email:</label>
+                    <input type="text" name="email" required value="<%= user.email %>">
+                    <label >firstName:</label>
+                    <input type="text" id="" name="firstName" value="<%= user.firstName %>">
+                    <label >lastName:</label>
+                    <input type="text" id="" name="lastName" value="<%= user.lastName %>" required>
+                    <label >phone:</label>
+                    <input type="text" id="" name="phone" value="<%= user.phone %>" required>
+                    <input type="submit" value="Save">
+                </form>
+            </div>
+    </body>
+</html>
