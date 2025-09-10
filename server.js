@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const dbConfig = require("./config/database");
 const userRoute = require('./routes/user');
 var path = require('path');
+const methodOverride = require('method-override');
 
 const app = express();
 
@@ -32,6 +33,7 @@ app.use((req,res,next) => {
     res.locals.path = req.path;
     next();
 });
+app.use(methodOverride('_method'));
 
 //routes
 app.get('/',(req,res) => {

@@ -9,6 +9,7 @@ router.get('/list', UserController.findAll);  //ok
 router.get('/:id', UserController.findOne);   //ok
 router.post('/create', UserController.create_post);
 router.post('/update/:id', UserController.update);
+router.get('/edit/:id', UserController.findOne);
 router.delete('/:id', UserController.destroy);
 
 module.exports = router

@@ -12,6 +12,8 @@
                       <th>firstname</th>
                       <th>lastname</th>
                       <th>phone</th>
+                      <th>Edit</th>
+                      <th>Delete</th>
                     </tr>
                   </thead>
                 <tbody>
@@ -22,7 +24,14 @@
                     <td><%= user.firstName %> </td>
                     <td><%= user.lastName %></td>
                     <td><%= user.phone %></td>
-                   
+                    <td>
+                        <a href="/user/edit/<%= user._id %>">Edit</a> <!-- Added Edit link -->
+                    </td>
+                    <td>
+                        <form action="/user/delete/<%= user._id %>?_method=DELETE" method="POST" style="display:inline;">
+                            <button type="submit">Delete</button>
+                        </form>
+                    </td>
               <% }) %>
                 </tr>
             </tbody>
@@ -30,6 +39,9 @@
             <% } else { %>
               <p>There are no user to display...</p>
             <% } %>
+          </div>
+          <div>
+              <button onclick="window.location.href='/'">Back to Home</button>
           </div>
     </body>
 </html>
